@@ -224,9 +224,10 @@ cd OrderEase</code></pre>
   <h2>TechStack - Built with
     <img src="https://cdn.icon-icons.com/icons2/2530/PNG/512/flutter_button_icon_151957.png" alt="Flutter" height="20" style="vertical-align: middle; filter: none;"/>
     <img src="https://cdn.icon-icons.com/icons2/2530/PNG/512/dart_colour_button_icon_151934.png" alt="Dart" height="20" style="vertical-align: middle; filter: none;"/>
-    <img src="https://github.com/user-attachments/assets/b4b3e453-bee1-402c-afd2-c02b137704a6" alt="Firebase" height="20" style="vertical-align: middle; filter: none;"/>
+    <img src="https://github.com/user-attachments/assets/deea2cf0-377f-4e47-b9fb-5290d8d108c0" alt="Firebase" height="20" style="vertical-align: middle; filter: none;"/>
   </h2>
  
+
   <h3>Frontend Framework</h3>
   <ul>
     <li><strong>Flutter</strong>: Google's UI toolkit for building natively compiled, cross-platform applications with a single codebase. Enables responsive design for both mobile and tablet devices.</li>
@@ -238,6 +239,7 @@ cd OrderEase</code></pre>
     <li><strong>Firebase Firestore</strong>: NoSQL cloud database for real-time data synchronization, storing orders, menu items, user roles, settlements, and activity logs.</li>
     <li><strong>Firebase Storage</strong>: Cloud storage solution for storing and serving user-uploaded content including category background images and hotel logos.</li>
     <li><strong>Firebase Authentication</strong>: Secure authentication system for managing user credentials and role-based access control across Admin, Manager, Cook, and Cashier roles.</li>
+    <li><strong>Firebase Hosting</strong>: Hosted the web application on Firebase Hosting for secure, fast, and scalable access.</li>
   </ul>
 
   <h3>Key Flutter Packages & Dependencies</h3>
@@ -265,247 +267,271 @@ cd OrderEase</code></pre>
 <h3>🏗️ High-Level Architecture:</h3>
 
 <pre>
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                            ORDEREASE APPLICATION                            │
-│                                                                             │
-│   ┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐   │
-│   │ Landing Screen  │ →  │  Authentication  │ →  │  Role-Based Entry  │   │
-│   │ • Registration  │    │  • Login System  │    │  • Admin/Manager   │   │
-│   │ • Hotel Setup   │    │  • Hotel ID Auth │    │  • Cook/Cashier    │   │
-│   └─────────────────┘    └──────────────────┘    └────────────────────┘   │
-│                                                                             │
+┌────────────────────────────────────────────────────────────────────────────┐
+│                            ORDEREASE APPLICATION                           │
+│                                                                            │
+│   ┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐    │
+│   │ Landing Screen  │ →  │  Authentication  │ →  │  Role-Based Entry  │    │
+│   │ • Registration  │    │  • Login System  │    │  • Admin/Manager   │    │
+│   │ • Hotel Setup   │    │  • Hotel ID Auth │    │  • Cook/Cashier    │    │
+│   └─────────────────┘    └──────────────────┘    └────────────────────┘    │
+│                                                                            │
 │   ┌─────────────────────────────────────────────────────────────────────┐  │
 │   │                        ROLE-BASED MODULES                           │  │
 │   │                                                                     │  │
-│   │  ┌──────────────┐  ┌──────────────┐  ┌──────────┐  ┌────────────┐ │  │
-│   │  │    ADMIN     │  │   MANAGER    │  │   COOK   │  │  CASHIER   │ │  │
-│   │  ├──────────────┤  ├──────────────┤  ├──────────┤  ├────────────┤ │  │
-│   │  │• Dashboard   │  │• Table Mgmt  │  │• Orders  │  │• Settle    │ │  │
-│   │  │• Menu Setup  │  │• Order Entry │  │• Kitchen │  │• Bills     │ │  │
-│   │  │• Staff Roles │  │• Item Search │  │• Progress│  │• Payment   │ │  │
-│   │  │• Tables/GST  │  │• Order Place │  │• Prepare │  │• QR Bills  │ │  │
-│   │  │• Analytics   │  │• Notify Cook │  │• Complete│  │• PDF Gen   │ │  │
-│   │  │• Settlements │  │              │  │          │  │            │ │  │
-│   │  │• Activity Log│  │              │  │          │  │            │ │  │
-│   │  └──────────────┘  └──────────────┘  └──────────┘  └────────────┘ │  │
+│   │  ┌──────────────┐  ┌───────────────┐  ┌──────────┐  ┌────────────┐  │  │
+│   │  │    ADMIN     │  │   MANAGER     │  │   COOK   │  │  CASHIER   │  │  │
+│   │  ├──────────────┤  ├───────────────┤  ├──────────┤  ├────────────┤  │  │
+│   │  │• Dashboard   │  │• Table Mgmt   │  │• Orders  │  │• Settle    │  │  │
+│   │  │• Menu Setup  │  │• Order Entry  │  │• Kitchen │  │• Bills     │  │  │
+│   │  │• Staff Roles │  │• Item Search  │  │• Progress│  │• Payment   │  │  │
+│   │  │• Tables/GST  │  │• Order Place  │  │• Prepare │  │• QR Bills  │  │  │
+│   │  │• Analytics   │  │• Notify Cook  │  │• Complete│  │• PDF Gen   │  │  │
+│   │  │• Settlements │  │• Food Progress│  │          │  │            │  │  │
+│   │  │• Activity Log│  │               │  │          │  │            │  │  │
+│   │  ├──────────────┤  ├───────────────┤  ├──────────┤  ├────────────┤  │  │
 │   └─────────────────────────────────────────────────────────────────────┘  │
-│                                                                             │
+│                                                                            │
 │   ┌─────────────────────────────────────────────────────────────────────┐  │
 │   │                    CUSTOMER-FACING FEATURES                         │  │
-│   │  ┌───────────────────────┐          ┌──────────────────────────┐   │  │
-│   │  │  QR Order Tracking    │          │   Review & Rating        │   │  │
-│   │  │  • Scan Table QR      │          │   • 10-Point Scale       │   │  │
-│   │  │  • Live Order Status  │          │   • Post-Settlement      │   │  │
-│   │  │  • Real-time Updates  │          │   • Analytics Input      │   │  │
-│   │  └───────────────────────┘          └──────────────────────────┘   │  │
+│   │  ┌───────────────────────┐          ┌──────────────────────────┐    │  │
+│   │  │  QR Order Tracking    │          │   Review & Rating        │    │  │
+│   │  │  • Scan Table QR      │          │   • 10-Point Scale       │    │  │
+│   │  │  • Live Order Status  │          │   • Post-Settlement      │    │  │
+│   │  │  • Real-time Updates  │          └──────────────────────────┘    │  │
+│   │  └───────────────────────┘                                          │  │  
 │   └─────────────────────────────────────────────────────────────────────┘  │
-│                                                                             │
+│                                                                            │
 │   ┌─────────────────────────────────────────────────────────────────────┐  │
 │   │                      STATE MANAGEMENT LAYER                         │  │
 │   │                        (Provider Pattern)                           │  │
-│   │   • Real-time Data Sync  • Role-Based Access  • Order Flow Control │  │
+│   │   • Real-time Data Sync  • Role-Based Access  • Order Flow Control  │  │
 │   └─────────────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────┬───────────────────────────────────────────┘
+└─────────────────────────────────┬──────────────────────────────────────────┘
                                   │
                          ═════════╪═══════════
-                          FLUTTER │ DART
+                          FLUTTER │   DART
                          ═════════╪═══════════
                                   │
-┌─────────────────────────────────▼───────────────────────────────────────────┐
-│                          FIREBASE BACKEND SERVICES                          │
-│                                                                             │
+┌─────────────────────────────────▼─────────────────────────────────────────┐
+│                          FIREBASE BACKEND SERVICES                        │
+│                                                                           │
 │  ┌──────────────────────┐  ┌──────────────────────┐  ┌─────────────────┐  │
 │  │  AUTHENTICATION      │  │  CLOUD FIRESTORE     │  │ FIREBASE STORAGE│  │
 │  ├──────────────────────┤  ├──────────────────────┤  ├─────────────────┤  │
-│  │ • Email/Password     │  │ • Hotels Collection  │  │ • Category Imgs │  │
-│  │ • Role Management    │  │ • Menu Items         │  │ • Hotel Logos   │  │
-│  │ • Session Control    │  │ • Orders (Active)    │  │ • Bill PDFs     │  │
-│  │ • Hotel ID Binding   │  │ • Orders (Complete)  │  │ • Media Assets  │  │
-│  │                      │  │ • Settlements        │  │                 │  │
-│  │                      │  │ • User Roles         │  │                 │  │
-│  │                      │  │ • Reviews (Rating)   │  │                 │  │
-│  │                      │  │ • Analytics Data     │  │                 │  │
-│  │                      │  │ • Activity Logs      │  │                 │  │
-│  └──────────────────────┘  └──────────────────────┘  └─────────────────┘  │
-│                                                                             │
-│                    ┌────────────────────────────────┐                       │
-│                    │   REAL-TIME SYNCHRONIZATION    │                       │
-│                    │   • Multi-device Support       │                       │
-│                    │   • Instant Order Updates      │                       │
-│                    │   • Live Kitchen Feed          │                       │
-│                    │   • Cross-role Communication   │                       │
-│                    └────────────────────────────────┘                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+│  │ • Email/Password     │  │ • Hotels/{HotelId}/  │  │ • Menu Images   │  │  
+│  │ • Role Management    │  │   ├─ Category Imgs   │  │ • Hotel Logos   │  │
+│  │ • Session Control    │  │   ├─ Menu            │  └─────────────────┘  │
+│  │ • Hotel ID Binding   │  │   ├─ Bill            │                       │      
+│  │                      │  │   ├─ Cook            │                       │ 
+│  │                      │  │   ├─ Food Review     │                       │
+│  │                      │  │   ├─ Settlements     │                       │
+│  │                      │  │   ├─ Transactions    │                       │
+│  │                      │  │   ├─ Users           │                       │
+│  │                      │  │   ├─ Activity Logs   │                       │
+│  │                      │  └──────────────────────┘                       │ 
+│  └──────────────────────┘                                                 │ 
+│                                                                           │
+│                    ┌────────────────────────────────┐                     │
+│                    │   REAL-TIME SYNCHRONIZATION    │                     │
+│                    │   • Multi-device Support       │                     │
+│                    │   • Instant Order Updates      │                     │
+│                    │   • Live Kitchen Feed          │                     │
+│                    │   • Cross-role Communication   │                     │
+│                    └────────────────────────────────┘                     │
+└───────────────────────────────────────────────────────────────────────────┘
                                   │
                          ═════════╪═══════════
-                           DATA FLOW
+                              DATA FLOW
                          ═════════╪═══════════
                                   │
 ┌─────────────────────────────────▼───────────────────────────────────────────┐
 │                            DEVICE DEPLOYMENT                                │
 │                                                                             │
-│     ┌─────────────────────────┐              ┌─────────────────────────┐   │
-│     │   MOBILE DEVICES        │              │   TABLET DEVICES        │   │
-│     │   • Portrait View       │              │   • Landscape View      │   │
-│     │   • On-the-go Access    │              │   • Enhanced Order UI   │   │
-│     │   • All Features        │              │   • Bigger Display      │   │
-│     │   • Responsive Design   │              │   • Same Features       │   │
-│     └─────────────────────────┘              └─────────────────────────┘   │
+│     ┌─────────────────────────┐              ┌─────────────────────────┐    │
+│     │   MOBILE DEVICES        │              │   TABLET DEVICES        │    │
+│     │   • Portrait View       │              │   • Landscape View      │    │
+│     │   • On-the-go Access    │              │   • Enhanced Order UI   │    │
+│     │   • All Features        │              │   • Bigger Display      │    │
+│     │   • Responsive Design   │              │   • Same Features       │    │
+│     └─────────────────────────┘              └─────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                              KEY DATA FLOWS                                 │
 │                                                                             │
-│  Order Flow:  Manager → Order Placement → Cook Dashboard → Preparation     │
+│  Order Flow:  Manager → Order Placement → Cook Dashboard → Preparation      │
 │               → Completion → Cashier → Settlement → Bill Generation         │
 │                                                                             │
-│  Analytics:   All Transactions → Firestore → Analytics Engine →            │
+│  Analytics:   All Transactions → Firestore → Analytics Engine →             │
 │               Visualizations (Daily/Weekly/Monthly/Yearly Reports)          │
 │                                                                             │
-│  Customer:    Table QR Scan → Live Order Status → Rating System →          │
+│  Customer:    Table QR Scan → Live Order Status → Rating System →           │
 │               Feedback Storage → Analytics Integration                      │
 └─────────────────────────────────────────────────────────────────────────────┘
 </pre>
-<h3>🗂️ Project Structure:</h3>
 
+<h3>🗂️ Project Structure:</h3>
 <pre>
 OrderEase/
 │
-├── OrderEase/                # Flutter Frontend
-│   ├── lib/
-│   │   ├── main.dart          # App entry point
-│   │   ├── pages              # Features Screens
-│   ├── pubspec.yaml           # Flutter dependencies
-│   ├── android/               # Android-specific config
-│   ├── ios/                   # iOS-specific config
-│   └── README.md
-│   ├── server/                 # FastAPI Backend
-│       ├── server.py           # Main application file
-│       ├── requirements.txt    # Python dependencies
+├── lib/                                # Flutter Application Source Code
+│   ├── main.dart                       # App entry point & initialization
+│   ├── firebase_options.dart           # Firebase configuration
+│   │
+│   ├── Admin/                          # Admin Module
+│   │   ├── logs/                       # Logs Module
+│   │   ├── menu/                       # Menu & category management
+│   │   ├── roles/                      # Staff role assignment
+│   │   ├── admin_dashboard.dart        # Admin Panel
+│   │
+│   ├── Manager/                        # Manager Module
+│   │
+│   ├── Cook/                           # Cook Module
+│   │
+│   ├── Settlements/                    # Settlement & Billing Module
+│   │   ├── Bill_Print/                 # Bill generation components
+│   │   ├── analytics_dashboard.dart    # Analytics visualization
+│   │   ├── cleared_settlements.dart    # Settlement history
+│   │   ├── get_analytics_report.dart   # Report generation
+│   │   ├── pending_settlements.dart    # Pending bills view
+│   │   ├── settlements_table_dashboard.dart  # Settlement management
+│   │   └── settlements_view.dart       # Detailed settlement view
+│   │
+│   ├── Website_Feature/                # Customer-Facing Features
+│   │   ├── Customer/                   # Customer interface components
+│   │   ├── web_home_page.dart          # Landing Webpage
+│   │   └── main_web.dart               # Web interface entry
+│   │
+│   ├── Authentication/                 # Authentication Module
+│   │   ├── auth.dart                   # Hotel registration
+│   │
+│   ├── LandingScreen/                  # Landing Page
+│   │   └── landing_page.dart           # Initial entry screen
+│   │
+│   ├── Review_System/                  # Customer Feedback Module
+│   │   ├── review_system.dart          # 10-point rating interface
+│   │
+│   └── util_components/                # Reusable UI Components
+│       ├── util.dart                   # Custom Util widgets
+│       ├── QR_Code/                    # QR Generation components
 │
-├── README.md                  # Main project documentation
-└── LICENSE
+├── android/                            # Android Configuration
+│ 
+├── assets/                             # Static Assets
+│   ├── images/                         # App images & icons
+│   ├── fonts/                          # Custom fonts
+│   └── logos/                          # Brand assets
+│
+├── pubspec.yaml                        # Flutter dependencies & config
+├── pubspec.lock                        # Dependency lock file
+├── analysis_options.yaml               # Dart analyzer settings
+├── README.md                           # Project documentation
+└── LICENSE                             # Project license
 </pre>
-
 <h3>🔐 OrderEase Security Architecture</h3>
-
 <ul>
-  <li><strong>API Key Management</strong>:
+  <li><strong>Firebase Authentication</strong>:
     <ul>
-      <li>Secure storage of API keys in .env (never committed to Git)</li>
-      <li>Server-side key rotation for uninterrupted AI processing</li>
-      <li>Keys never exposed to frontend or client devices</li>
+      <li>Secure email/password authentication for all users</li>
+      <li>Unique Hotel ID assignment for multi-tenant isolation</li>
+      <li>Role-based access control (RBAC) for Admin, Manager, Cook, and Cashier</li>
+      <li>Session management with automatic token refresh</li>
+      <li>Password encryption and secure credential storage</li>
+    </ul>
+  </li>
+  
+  <li><strong>Data Security</strong>:
+    <ul>
+      <li>End-to-end encryption for data transmission between app and Firebase</li>
+      <li>Firestore Security Rules to restrict data access based on user roles</li>
+      <li>Hotel data isolation - users can only access their own hotel's data</li>
+      <li>Secure Firebase Storage rules for image and PDF uploads</li>
+      <li>Activity logging for audit trails and monitoring</li>
+    </ul>
+  </li>
+  
+  <li><strong>Role-Based Access Control (RBAC)</strong>:
+    <ul>
+      <li><strong>Admin</strong>: Full access to all features, staff management, and analytics</li>
+      <li><strong>Manager</strong>: Table management, order placement, and customer notifications</li>
+      <li><strong>Cook</strong>: Kitchen dashboard, order preparation, and status updates</li>
+      <li><strong>Cashier</strong>: Billing, settlements, and payment processing only</li>
+      <li>Each role has restricted access to prevent unauthorized operations</li>
+    </ul>
+  </li>
+  
+  <li><strong>Firebase Security Rules</strong>:
+    <ul>
+      <li>Read/Write permissions enforced at database level</li>
+      <li>User authentication required for all database operations</li>
+      <li>Hotel ID validation to prevent cross-hotel data access</li>
+      <li>Rate limiting to prevent abuse and DDoS attacks</li>
+    </ul>
+  </li>
+  
+  <li><strong>Payment & Billing Security</strong>:
+    <ul>
+      <li>Secure PDF generation for bills with encrypted QR codes</li>
+      <li>Payment mode tracking (Cash, UPI, Card) without storing sensitive card details</li>
+      <li>Settlement logs maintained for financial auditing</li>
+      <li>No storage of customer payment credentials in the application</li>
     </ul>
   </li>
   
   <li><strong>Data Privacy</strong>:
     <ul>
-      <li>Audio is processed completely in-memory</li>
-      <li>No audio or generated content stored on the server</li>
-      <li>Temporary files auto-deleted after processing</li>
-      <li>Zero user tracking — OrderEase does not collect or retain personal data</li>
+      <li>Customer data (orders, reviews) anonymized for analytics</li>
+      <li>Optional customer feedback - no mandatory personal information collection</li>
+      <li>QR code order tracking without requiring customer login</li>
+      <li>Compliance with data protection best practices</li>
     </ul>
   </li>
   
-  <li><strong>API Security</strong>:
+  <li><strong>Application Security</strong>:
     <ul>
-      <li>Strict CORS policies for trusted domains</li>
-      <li>Request validation, sanitization, and safe error handling</li>
-      <li>Protected backend routes to prevent unauthorized usage</li>
-    </ul>
-  </li>
-</ul>
-
-<h3>⚡ OrderEase Performance Optimizations</h3>
-
-<ul>
-  <li><strong>Backend</strong>:
-    <ul>
-      <li>FastAPI backend with highly optimized async processing</li>
-      <li>Groq LLM inference speeds up to 330 tokens/sec</li>
-      <li>Memory-efficient pipeline for handling long audio files</li>
-      <li>Automatic key rotation prevents API rate-limit slowdowns</li>
+      <li>Input validation and sanitization to prevent injection attacks</li>
+      <li>Secure API calls with proper error handling</li>
+      <li>Protected routes to prevent unauthorized access to sensitive screens</li>
+      <li>Regular security updates through Firebase SDK</li>
     </ul>
   </li>
   
-  <li><strong>Frontend</strong>:
+  <li><strong>Device Security</strong>:
     <ul>
-      <li>Lazy-loaded UI components for faster initial load</li>
-      <li>Optimized PDF generation with cached fonts</li>
-      <li>Compressed and optimized images</li>
-      <li>Smooth and efficient state management for a responsive UI</li>
+      <li>Secure local storage for session tokens</li>
+      <li>Automatic logout after inactivity timeout</li>
+      <li>Support for biometric authentication (future enhancement)</li>
+      <li>Encrypted communication between app and Firebase services</li>
     </ul>
   </li>
 </ul>
-</section>
 
 <section id="screenshots">
   <h2 id="screenshots">App Demonstration</h2>
   <button> <a href="https://drive.google.com/file/d/1n1-7fQX8kG-AyN3iRzpJ3jv9V25sCGOn/view?usp=sharing" target="_blank">Clear here to watch</button></a>  
   <h2> Screenshots </h2>   
-  <img src="https://github.com/user-attachments/assets/d6bd2d65-d428-42fb-85ec-74c09cb683cf" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/8e57886b-b97d-4e0f-a5b2-5b706a504648" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/4cc12fba-0970-4075-8817-d9f5fc1175b7" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/12ef30fb-c8ef-4002-8895-a6eb8a92c82f" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/a5a7a83d-a530-4dac-9f4e-15809d40e187" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/69b02efd-b210-4333-83a1-d4d3573adf2c" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/c779e588-933b-418c-b02c-43b988e50107" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/92a35f92-bd16-4df0-871a-c51502b645d7" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/140f5198-8a1d-4201-9961-c4885a6aa90d" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/8b9f325c-ff8b-4510-ae0b-c485cac584eb" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/af308e05-06b2-4ca0-8291-d7338f82a54f" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/cfe636ad-b298-44c7-bf60-4c681b1a532b" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/f9c92b41-cf4b-4343-a97b-80551fbb6997" style="width: 200px;" />
-</section>
+  <img src="" style="width: 200px;" />
+  </section>
 
 
 <section id="conclusion">
   <h2>Conclusion</h2>
   <p>
-   OrderEase Lens represents a practical, human-centered assistive technology designed to empower visually impaired individuals with enhanced perception, awareness, and independence. By integrating ESP32-CAM based edge processing with an intelligent mobile application, the system provides essential features such as scene description, object recognition, text reading, and situational navigation without heavy dependence on cloud services. Its modular design, low-cost hardware, and real-time audio feedback make it both accessible and scalable for everyday use. Ultimately, OrderEase Lens demonstrates how affordable innovation, thoughtful engineering, and user-centric design can work together to significantly improve the quality of life for people with vision impairments.
+    OrderEase represents a comprehensive, practical solution for modern restaurant management, designed to streamline operations and enhance efficiency across all levels of service. By integrating Flutter's cross-platform capabilities with Firebase's real-time database infrastructure, the system provides essential features such as smart menu management, live order tracking, digital billing, and powerful business analytics without the complexity of traditional restaurant management systems. Its role-based modular design, responsive UI for mobile and tablet devices, and paperless operations make it both accessible and scalable for restaurants of any size. The inclusion of customer-facing features like QR code order tracking and a 10-point rating system bridges the gap between restaurant operations and customer satisfaction. Ultimately, OrderEase demonstrates how thoughtful software architecture, user-centric design, and cloud-based technology can work together to digitally transform restaurant operations, reduce operational costs, and improve both staff productivity and customer experience in the competitive food service industry.
   </p>
 </section>
 
 
 
 <section id = "team">
-  <h2> The Team </h2>
+  <h2> Developed By: </h2>
   <h3> Pannaga R Bhat </h3>
 <p align="left">
   <a href="https://github.com/pannaga-rj" style="text-decoration: none;" target="_blank" rel="nofollow">
     <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" alt="GitHub" style="max-width: 100%;">
   </a>
   <a href="https://www.linkedin.com/in/pannaga-r-bhat-ba8bb6289/" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn" />
-  </a>
-</p>
-
-<h3> Pradeep P T </h3>
-<p align="left">
-  <a href="" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" alt="GitHub" />
-  </a>
-  <a href="" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn" />
-  </a>
-</p>
-
-<h3> Prajwal P </h3>
-<p align="left">
-  <a href="" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" alt="GitHub" />
-  </a>
-  <a href="" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn" />
-  </a>
-</p>
-
-<h3> Pranav Anantha Rao </h3>
-<p align="left">
-  <a href="" style="text-decoration: none;" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" alt="GitHub" />
-  </a>
-  <a href="" style="text-decoration: none;" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn" />
   </a>
 </p>
