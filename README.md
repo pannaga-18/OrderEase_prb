@@ -525,7 +525,7 @@ OrderEase/
         <li>Staff role assignment and table configuration</li>
         <li>GST settings and settlement management</li>
       </ul>
-      <p>📹 <a href="YOUR_ADMIN_DEMO_VIDEO_LINK">Watch Admin Setup Demo</a></p>
+      <p>📹 <a href="https://drive.google.com/file/d/1UNBBgJFlUzvp_07anUJ3DBDqeeXob7zz/view?usp=sharing">Watch Admin Setup Demo</a></p>
     </li>
     <br>
     <li>
@@ -538,7 +538,7 @@ OrderEase/
         <li>End-to-end workflow from order to settlement</li>
          <li>Analytics dashboard and business insights</li>
       </ul>
-      <p>📹 <a href="YOUR_ORDER_FLOW_DEMO_VIDEO_LINK">Watch Order Management Demo</a></p>
+      <p>📹 <a href="https://drive.google.com/file/d/1yvutbD5sgKxPu_93dsWnhT4bVcKI5pZS/view?usp=sharing">Watch Order Management Demo</a></p>
     </li>
   </ol>
 
