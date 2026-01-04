@@ -16,7 +16,7 @@ OrderEase is a comprehensive restaurant order management system built with Flutt
   </ul>
   <li> <a href = "#tech_used"> TechStack Used </a></li>
   <li> <a href = "#architecture"> System Architecture </a></li>
-  <li> <a href = "#screenshots"> Screenshots and App Demonstration </a></li>
+  <li> <a href = "#app_demonstration"> Screenshots and App Demonstration </a></li>
   <li> <a href = "#conclusion"> Conclusion </a></li>
   <li> <a href = "#team"> Developed By </a></li>
 </ul>
@@ -507,12 +507,157 @@ OrderEase/
   </li>
 </ul>
 
-<section id="screenshots">
-  <h2 id="screenshots">App Demonstration</h2>
-  <button> <a href="https://drive.google.com/file/d/1n1-7fQX8kG-AyN3iRzpJ3jv9V25sCGOn/view?usp=sharing" target="_blank">Clear here to watch</button></a>  
-  <h2> Screenshots </h2>   
-  <img src="" style="width: 200px;" />
-  </section>
+<section id="app_demonstration">
+  <h2>📱 App Demonstration & Testing</h2>
+  
+  <h3>🎥 Video Demonstrations</h3>
+  <p>
+    <strong>Before creating new credentials or testing the application, we highly recommend watching the demonstration videos to understand the complete workflow and features of OrderEase.</strong> These videos provide a comprehensive walkthrough of the system setup and order management process, helping you navigate the application effectively.
+  </p>
+  
+  <h4>Demo Videos:</h4>
+  <ol>
+    <li>
+      <strong>Admin Setup & Dashboard Features</strong>
+      <ul>
+        <li>Hotel registration and initial setup process</li>
+        <li>Menu management, category creation, and customization</li>
+        <li>Staff role assignment and table configuration</li>
+        <li>GST settings and settlement management</li>
+      </ul>
+      <p>📹 <a href="YOUR_ADMIN_DEMO_VIDEO_LINK">Watch Admin Setup Demo</a></p>
+    </li>
+    <br>
+    <li>
+      <strong>Complete Order Management Flow</strong>
+      <ul>
+        <li>Manager: Table selection and order placement</li>
+        <li>Cook: Kitchen dashboard and order preparation</li>
+        <li>Cashier: Billing and settlement process</li>
+        <li>Customer: QR code order tracking and rating</li>
+        <li>End-to-end workflow from order to settlement</li>
+         <li>Analytics dashboard and business insights</li>
+      </ul>
+      <p>📹 <a href="YOUR_ORDER_FLOW_DEMO_VIDEO_LINK">Watch Order Management Demo</a></p>
+    </li>
+  </ol>
+
+  <h3>📲 Download & Install APK</h3>
+  <p>
+    You can download and install the OrderEase APK on your Android device (mobile or tablet) to test all features. The application is optimized for both portrait (mobile) and landscape (tablet) orientations.
+  </p>
+  <p>
+    📥 <strong>Download APK:</strong> <a href="YOUR_APK_DOWNLOAD_LINK">OrderEase APK</a>
+  </p>
+  <p>
+    <em>Note: Enable "Install from Unknown Sources" in your Android settings to install the APK.</em>
+  </p>
+
+  <h3>🔑 Test Credentials</h3>
+  <p>
+    For quick evaluation and testing, you can use the following pre-configured credentials. These accounts are set up with sample data to help you explore all features immediately:
+  </p>
+
+  <h4>Sample Hotel Details:</h4>
+  <ul>
+    <li><strong>Hotel Name:</strong> Shree Guru Sagar </li>
+    <li><strong>Hotel ID:</strong> <code>1</code></li>
+  </ul>
+
+  <h4>User Credentials by Role:</h4>
+  <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Role</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Access Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Admin</strong></td>
+        <td><code>sgs@1gmail.com</code></td>
+        <td><code>sgs1234</code></td>
+        <td>Full access to all features</td>
+      </tr>
+      <tr>
+        <td><strong>Manager</strong></td>
+        <td><code>prb2@gmail.com</code></td>
+        <td><code>qwe1234</code></td>
+        <td>Table & order management</td>
+      </tr>
+      <tr>
+        <td><strong>Cook</strong></td>
+        <td><code>prb1@gmail.com</code></td>
+        <td><code>qwe1234</code></td>
+        <td>Kitchen operations</td>
+      </tr>
+      <tr>
+        <td><strong>Cashier</strong></td>
+        <td><code>prb3@gmail.com</code></td>
+        <td><code>qwe1234</code></td>
+        <td>Billing & settlements</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🆕 Create Your Own Hotel</h3>
+  <p>
+    Alternatively, you can register your own hotel and create custom credentials to experience the complete setup process:
+  </p>
+  <ol>
+    <li>Download and install the OrderEase APK</li>
+    <li>Open the application and navigate to the Registration screen</li>
+    <li>Fill in your hotel details (name, address, contact, GST number, etc.)</li>
+    <li>Upload your hotel logo (optional)</li>
+    <li>Complete registration to receive a unique Hotel ID</li>
+    <li>Login as Admin using your registered credentials</li>
+    <li>Set up your menu, add staff roles, configure tables, and start managing orders</li>
+  </ol>
+
+  <h3>📸 Screenshots</h3>
+  <p>Below are screenshots showcasing OrderEase features across different roles and devices:</p>
+  
+  <h4>Mobile View:</h4>
+  <ul>
+    <li>Landing & Authentication screens</li>
+    <li>Admin Dashboard & Menu Management</li>
+    <li>Manager Order Placement</li>
+    <li>Cook Kitchen Dashboard</li>
+    <li>Cashier Settlement & QR Bill</li>
+    <li>Customer Order Tracking & Rating</li>
+  </ul>
+  <!-- Add your mobile screenshots here -->
+  <p>📹 <a href="YOUR_MSS_LINK">Watch all Mobile View Snapshots here</a></p>
+  
+  <h4>Tablet View:</h4>
+  <ul>
+    <li>Landscape Admin Dashboard</li>
+    <li>Enhanced Order Management Interface</li>
+    <li>Kitchen Operations Display</li>
+    <li>Settlement Dashboard</li>
+  </ul>
+  <!-- Add your tablet screenshots here -->
+  <p>📹 <a href="YOUR_TSS_LINK">Watch all Tablet View Snapshots here</a></p>
+
+  <h3>💡 Testing Tips</h3>
+  <ul>
+    <li><strong>Start with Admin:</strong> Login as Admin first to understand the complete setup and configuration options</li>
+    <li><strong>Follow the Order Flow:</strong> Test the complete flow by logging in as Manager → Cook → Cashier sequentially</li>
+    <li><strong>Try QR Features:</strong> Scan the table QR code to experience customer-facing order tracking</li>
+    <li><strong>Explore Analytics:</strong> Check the analytics dashboard to see visual insights and reports</li>
+    <li><strong>Test on Tablet:</strong> Experience the enhanced landscape view on tablet devices for better usability</li>
+  </ul>
+
+  <h3>⚠️ Important Notes</h3>
+  <ul>
+    <li>Test credentials are shared among evaluators - data may change during testing</li>
+    <li>For isolated testing, create your own hotel registration</li>
+    <li>Ensure stable internet connection for real-time Firebase synchronization</li>
+    <li>All features work best on Android 8.0 (API level 26) or higher</li>
+  </ul>
+</section>
 
 
 <section id="conclusion">
