@@ -16,7 +16,7 @@ OrderEase is a comprehensive restaurant order management system built with Flutt
   </ul>
   <li> <a href = "#tech_used"> TechStack Used </a></li>
   <li> <a href = "#architecture"> System Architecture </a></li>
-  <li> <a href = "#app_demonstration"> Screenshots and App Demonstration </a></li>
+  <li> <a href = "#app_demonstration"> App Demonstration & Testing </a></li>
   <li> <a href = "#conclusion"> Conclusion </a></li>
   <li> <a href = "#team"> Developed By </a></li>
 </ul>
