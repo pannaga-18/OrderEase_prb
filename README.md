@@ -676,7 +676,7 @@ OrderEase/
   <a href="https://github.com/pannaga-rj" style="text-decoration: none;" target="_blank" rel="nofollow">
     <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" alt="GitHub" style="max-width: 100%;">
   </a>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pannagarbhat@gmail.com" target="_blank">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pannaga.rj@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white" alt="Gmail">
   </a>
 
