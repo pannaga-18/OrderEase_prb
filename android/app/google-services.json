@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "219301534379",
+    "project_id": "orderease-39f46",
+    "storage_bucket": "orderease-39f46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219301534379:android:a3b17e87a1aafe5d44f5ee",
+        "android_client_info": {
+          "package_name": "com.example.orderease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzyOjscK-QPcKArZzYyNrjE49SkP0Oh3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
