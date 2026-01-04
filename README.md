@@ -540,17 +540,54 @@ OrderEase/
       <p>📹 <a href="https://drive.google.com/file/d/1yvutbD5sgKxPu_93dsWnhT4bVcKI5pZS/view?usp=sharing">Watch Order Management Demo</a></p>
     </li>
   </ol>
-
+<hr/>
   <h3>📲 Download & Install APK</h3>
-  <p>
-    You can download and install the OrderEase APK on your Android device (mobile or tablet) to test all features. The application is optimized for both portrait (mobile) and landscape (tablet) orientations.
-  </p>
-  <p>
-    📥 <strong>Download APK:</strong> <a href="YOUR_APK_DOWNLOAD_LINK">OrderEase APK</a>
-  </p>
-  <p>
-    <em>Note: Enable "Install from Unknown Sources" in your Android settings to install the APK.</em>
-  </p>
+<h2>⚠️ Deployment Note</h2>
+
+<p>
+  The core application logic, workflows, and features were implemented and tested successfully. 
+  However, the final release APK generation encountered build-time issues due to toolchain version 
+  incompatibilities between Flutter, Kotlin, Android Gradle Plugin, and Android SDK. 
+  Flutter Android deployment requires strict version alignment across these components, and mismatches 
+  resulted in compilation failures during the release build process.
+</p>
+
+<p>
+  This challenge reflects a common real-world mobile deployment issue related to environment configuration, 
+  rather than any limitation in the application’s design or functionality.
+</p>
+
+<hr/>
+
+<h3>🌐 Live Web Demonstration (Fully Functional)</h3>
+
+<p>
+  To demonstrate the working features without relying solely on video recordings, the application’s 
+  customer-facing flows have been deployed and hosted as a live web application. These links allow 
+  reviewers to directly interact with the system and verify its real-time behavior.
+</p>
+
+<ul>
+  <li>
+    📱 <strong>Customer Food Status (Table QR View):</strong><br/>
+    Scanning the table QR code redirects to a live web page displaying the real-time food preparation 
+    status for that specific table.<br/>
+    🔗 <em>Deployed Link:</em> <a href="https://orderease-39f46.web.app/s/food/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6MCwicyI6ImZvb2Rfc3RhdHVzIiwic2J0IjoiIiwidHMiOjE3Njc1MzcyODYyOTN9.sgqlHzMciDxjiUlj90hWiqwIg9uUOTSYY9zLHwFJmfc=">View Food Status</a>
+  </li>
+
+  <li>
+    🧾 <strong>Bill Download via QR:</strong><br/>
+    Upon transaction completion, customers can scan the billing QR code to securely view and download 
+    their bill through the hosted web application.<br/>
+    🔗 <em>Deployed Link:</em> <a href="https://orderease-39f46.web.app/s/bill/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6NzksInMiOiJiaWxsX3N0YXR1cyIsInNidCI6IiIsInRzIjoxNzY3NTM3NzI3NjAwfQ==.Li45oqc0HP49FbRfRtwMOn0bLM3ngDjSWZEnxeHvamQ=">View Bill</a>
+  </li>
+</ul>
+
+<p>
+  These hosted flows confirm that the backend logic, QR-based routing, and customer interaction mechanisms 
+  are functioning correctly in a real deployment environment.
+</p>
+
 
   <h3>🔑 Test Credentials</h3>
   <p>
@@ -638,7 +675,7 @@ OrderEase/
     <li>Settlement Dashboard</li>
   </ul>
   <!-- Add your tablet screenshots here -->
-  <p>📹 <a href="YOUR_TSS_LINK">Watch all Tablet View Snapshots here</a></p>
+  <p>📹 <a href="https://drive.google.com/drive/folders/1jrpkM3oB6VOcrzEHGKhlkVmvmRUeQTrT?usp=drive_link">Watch all Tablet View Snapshots here</a></p>
 
   <h3>💡 Testing Tips</h3>
   <ul>
