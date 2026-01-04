@@ -181,8 +181,7 @@ The application serves four distinct user roles - Admin, Manager, Cook, and Cash
   <h3 id="installation">Installation</h3>
 
   <h4>1. Clone the Repository:</h4>
-  <pre><code>git clone https://github.com/pannaga-18/OrderEase_prb.git
-cd OrderEase</code></pre>
+  <pre><code>git clone https://github.com/pannaga-18/OrderEase_prb.git</code></pre>
 
  
   <h3 id="frontend_setup">Building the App</h3>
