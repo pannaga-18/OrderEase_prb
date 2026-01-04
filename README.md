@@ -187,7 +187,7 @@ The application serves four distinct user roles - Admin, Manager, Cook, and Cash
   <h3 id="frontend_setup">Building the App</h3>
   <ol>
     <li>
-      <p><strong>Navigate to App Directory</strong>: Ensure you are in the root directory of the OrderEase project.</p>
+      <p><strong>Navigate to App Directory</strong>: Ensure you are in the root directory of the OrderEase_prb project.</p>
     </li>
     <li>
       <p><strong>Get Dependencies</strong>: Run the below command to fetch and install the necessary Flutter dependencies for the app. This step ensures that your app has access to required packages including Firebase dependencies.</p>
