@@ -628,7 +628,7 @@ OrderEase/
     <li>Customer Order Tracking & Rating</li>
   </ul>
   <!-- Add your mobile screenshots here -->
-  <p>📹 <a href="YOUR_MSS_LINK">Watch all Mobile View Snapshots here</a></p>
+  <p>📹 <a href="https://drive.google.com/drive/folders/15eWV97eMaZ79YpRbdirNH4TVsRmtKvQg?usp=sharing">Watch all Mobile View Snapshots here</a></p>
   
   <h4>Tablet View:</h4>
   <ul>
