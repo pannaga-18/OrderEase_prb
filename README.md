@@ -559,7 +559,7 @@ OrderEase/
 
 
 <p>
-  <em>Note: Enable “Install from Unknown Sources” in your Android settings to install the APK.</em>
+  <em>Note: Enable “Install from Unknown Sources” in your Android settings to install the APK.</em> <br>
   <em>Suggestion: Optimized for both Mobile and Tablet devices.</em>
 </p>
 
