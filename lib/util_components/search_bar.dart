@@ -813,7 +813,98 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
   }
 
 // Load Data from Local (Fetch from SharedPreferences or Map)
-  Future<void> _loadStoredData() async {
+  // Future<void> _loadStoredData() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  //   tableData = {};
+
+  //   // Load the map from SharedPreferences
+  //   String? mapJson = prefs.getString('tableData');
+  //   if (mapJson != null) {
+  //     Map<String, dynamic> decodedData = jsonDecode(mapJson);
+
+  //     // NOTE
+  //     // MAP ENTRY IS A CONSTRUCTOR providing key and value as the OUTPUT
+  //     // .from method helps to retain the value as MAP itself instead of object.
+
+  //     tableData = decodedData.map((key, value) => MapEntry(
+  //           key,
+  //           Map<String, dynamic>.from(value),
+  //         ));
+  //   }
+
+  //   // Load status and UID from SharedPreferences
+  //   bool? storedStatus = prefs.getBool("isBlocked_${widget.table_option}");
+  //   String? uid = prefs.getString("uid_${widget.table_option}");
+    
+  //   DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
+  //       .collection("Hotels")
+  //       .doc(loc_hotelref)
+  //       .get();
+  //   Map<String, dynamic> data;
+  //   if (documentSnapshot.exists) {
+  //     print("FF");
+  //     print("PPP status");
+  //     data = documentSnapshot.data() as Map<String, dynamic>;
+  //     print(data);
+  //     storedStatus = data['table_status'][widget.table_option][0];
+  //   }
+
+  //   print("LOADED MAP DATA");
+  //   print(tableData);
+  //   print(storedStatus);
+  //   print(uid);
+
+  //   if (storedStatus != null && uid != null) {
+  //     String mapKey = "${uid}_${widget.table_option}";
+  //     print("Clear data 1");
+  //     DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
+  //         .collection("Hotels")
+  //         .doc(widget.hotelref)
+  //         .get();
+  //     Map<String, dynamic> data = {};
+  //     if (documentSnapshot.exists) {
+  //       data = documentSnapshot.data() as Map<String, dynamic>;
+  //     }
+
+  //     print("DATA FROM FIREBASE");
+  //     print(data);
+
+  //     // Clearing from manager's device
+  //     if (data['table_status'][widget.table_option][0] == false) {
+  //       print("clear data 2");
+  //       await _removeFromLocal();
+  //       return;
+  //     }
+
+  //     if (tableData.containsKey(mapKey)) {
+  //       // Load from map if available
+  //       if (!mounted) return;
+  //       setState(() {
+  //         isBlocked = tableData[mapKey]!['status'];
+  //         storedUID = uid;
+  //       });
+  //       print("Data Loaded from Map: $mapKey -> ${tableData[mapKey]}");
+  //     } else {
+  //       // Fallback to SharedPreferences if not in map
+  //       if (!mounted) return;
+  //       setState(() {
+  //         isBlocked = storedStatus;
+  //         storedUID = uid;
+  //       });
+  //       print("Data Loaded from SharedPreferences for ${widget.table_option}");
+  //     }
+  //   } else {
+  //     if (!mounted) return;
+  //     setState(() {
+  //       isBlocked = false;
+  //       storedUID = null;
+  //     });
+  //     print("No Data Found for ${widget.table_option}");
+  //   }
+  // }
+
+   Future<void> _loadStoredData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     tableData = {};
@@ -834,9 +925,10 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
     }
 
     // Load status and UID from SharedPreferences
-    bool? storedStatus = prefs.getBool("isBlocked_${widget.table_option}");
+    bool storedStatus = prefs.getBool("isBlocked_${widget.table_option}") ?? false;
     String? uid = prefs.getString("uid_${widget.table_option}");
-    
+    print("1 st $storedStatus");
+
     DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
         .collection("Hotels")
         .doc(loc_hotelref)
@@ -892,17 +984,19 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
           isBlocked = storedStatus;
           storedUID = uid;
         });
+
         print("Data Loaded from SharedPreferences for ${widget.table_option}");
       }
     } else {
       if (!mounted) return;
       setState(() {
-        isBlocked = false;
-        storedUID = null;
+        isBlocked = storedStatus;
+        storedUID = storedUID;
       });
       print("No Data Found for ${widget.table_option}");
     }
   }
+
 
   Future<void> _deletePreferences() async {
     // TO CLEAR LOCAL STORGAE
