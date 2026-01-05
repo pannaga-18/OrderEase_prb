@@ -836,6 +836,20 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
     // Load status and UID from SharedPreferences
     bool? storedStatus = prefs.getBool("isBlocked_${widget.table_option}");
     String? uid = prefs.getString("uid_${widget.table_option}");
+    
+    DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
+        .collection("Hotels")
+        .doc(loc_hotelref)
+        .get();
+    Map<String, dynamic> data;
+    if (documentSnapshot.exists) {
+      print("FF");
+      print("PPP status");
+      data = documentSnapshot.data() as Map<String, dynamic>;
+      print(data);
+      storedStatus = data['table_status'][widget.table_option][0];
+    }
+
     print("LOADED MAP DATA");
     print(tableData);
     print(storedStatus);
