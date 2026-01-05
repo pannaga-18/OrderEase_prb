@@ -659,7 +659,7 @@ OrderEase/
     <li>Download and install the OrderEase APK</li>
     <li>Open the application and navigate to the Registration screen</li>
     <li>Fill in your hotel details (name, address, contact, GST number, etc.)</li>
-    <li>Upload your hotel logo (optional)</li>
+    <li>Upload your hotel logo</li>
     <li>Complete registration to receive a unique Hotel ID</li>
     <li>Login as Admin using your registered credentials</li>
     <li>Set up your menu, add staff roles, configure tables, and start managing orders</li>
