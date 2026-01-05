@@ -542,19 +542,24 @@ OrderEase/
   </ol>
 <hr/>
   <h3>📲 Download & Install APK</h3>
-<h2>⚠️ Deployment Note</h2>
 
 <p>
-  The core application logic, workflows, and features were implemented and tested successfully. 
-  However, the final release APK generation encountered build-time issues due to toolchain version 
-  incompatibilities between Flutter, Kotlin, Android Gradle Plugin, and Android SDK. 
-  Flutter Android deployment requires strict version alignment across these components, and mismatches 
-  resulted in compilation failures during the release build process.
+  After multiple rigorous attempts and build environment refinements, the deployed APK was successfully 
+  generated using an alternative compatible build configuration. We apologize for any inconvenience 
+  caused by the earlier deployment note attached in files Attachments_Details - Entry Point or Team_OrderEase (Pannaga R Bhat) – Submission Attachments Details. Please consider this as a revised statement from the team.
 </p>
 
 <p>
-  This challenge reflects a common real-world mobile deployment issue related to environment configuration, 
-  rather than any limitation in the application’s design or functionality.
+  📥 <strong>Download APK:</strong>
+  <a href="https://drive.google.com/uc?export=download&id=1clONeBUBBurguJNUKv6wGuLRdquOtKJd">
+    OrderEase APK
+  </a>
+</p>
+
+
+
+<p>
+  <em>Note: Enable “Install from Unknown Sources” in your Android settings to install the APK.</em>
 </p>
 
 <hr/>
@@ -562,26 +567,33 @@ OrderEase/
 <h3>🌐 Live Web Demonstration (Fully Functional)</h3>
 
 <p>
-  To demonstrate the working features without relying solely on video recordings, the application’s 
-  customer-facing flows have been deployed and hosted as a live web application. These links allow 
-  reviewers to directly interact with the system and verify its real-time behavior.
+  In addition to the mobile application, the customer-facing QR-based workflows are deployed and hosted 
+  as live web applications. These deployments allow direct verification of real-time functionality 
+  without relying solely on recorded demonstrations.
 </p>
 
 <ul>
   <li>
     📱 <strong>Customer Food Status (Table QR View):</strong><br/>
-    Scanning the table QR code redirects to a live web page displaying the real-time food preparation 
-    status for that specific table.<br/>
-    🔗 <em>Deployed Link:</em> <a href="https://orderease-39f46.web.app/s/food/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6MCwicyI6ImZvb2Rfc3RhdHVzIiwic2J0IjoiIiwidHMiOjE3Njc1MzcyODYyOTN9.sgqlHzMciDxjiUlj90hWiqwIg9uUOTSYY9zLHwFJmfc=">View Food Status</a>
+    Scanning the table QR code redirects to a live page displaying the real-time food preparation 
+    status for a specific table.<br/>
+    🔗 <em>Deployed Link:</em> 
+    <a href="https://orderease-39f46.web.app/s/food/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6MCwicyI6ImZvb2Rfc3RhdHVzIiwic2J0IjoiIiwidHMiOjE3Njc1MzcyODYyOTN9.sgqlHzMciDxjiUlj90hWiqwIg9uUOTSYY9zLHwFJmfc=">
+      View Food Status
+    </a>
   </li>
 
   <li>
     🧾 <strong>Bill Download via QR:</strong><br/>
-    Upon transaction completion, customers can scan the billing QR code to securely view and download 
-    their bill through the hosted web application.<br/>
-    🔗 <em>Deployed Link:</em> <a href="https://orderease-39f46.web.app/s/bill/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6NzksInMiOiJiaWxsX3N0YXR1cyIsInNidCI6IiIsInRzIjoxNzY3NTM3NzI3NjAwfQ==.Li45oqc0HP49FbRfRtwMOn0bLM3ngDjSWZEnxeHvamQ=">View Bill</a>
+    Upon transaction completion, customers can securely view and download their bill through the 
+    hosted web application.<br/>
+    🔗 <em>Deployed Link:</em> 
+    <a href="https://orderease-39f46.web.app/s/bill/eyJoIjoiMV9zZ3NfYmVuZ2FsdXJ1XzU2MDA3OSIsInQiOiJUYWJsZSAyIiwiYiI6NzksInMiOiJiaWxsX3N0YXR1cyIsInNidCI6IiIsInRzIjoxNzY3NTM3NzI3NjAwfQ==.Li45oqc0HP49FbRfRtwMOn0bLM3ngDjSWZEnxeHvamQ=">
+      View Bill
+    </a>
   </li>
 </ul>
+
 
 <p>
   These hosted flows confirm that the backend logic, QR-based routing, and customer interaction mechanisms 
@@ -619,7 +631,7 @@ OrderEase/
       </tr>
       <tr>
         <td><strong>Manager</strong></td>
-        <td><code>prb2@gmail.com</code></td>
+        <td><code>prb@gmail.com</code></td>
         <td><code>qwe1234</code></td>
         <td>Table & order management</td>
       </tr>
