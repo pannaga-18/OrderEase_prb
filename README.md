@@ -569,7 +569,7 @@ OrderEase/
 <p>
   In addition to the mobile application, the customer-facing QR-based workflows are deployed and hosted 
   as live web applications. These deployments allow direct verification of real-time functionality 
-  without relying solely on recorded demonstrations.
+  without relying solely on recorded demonstrations. (Ex. Table 2 will shown in the below deployed links).
 </p>
 
 <ul>
@@ -600,7 +600,7 @@ OrderEase/
   are functioning correctly in a real deployment environment.
 </p>
 
-
+<hr/>
   <h3>🔑 Test Credentials</h3>
   <p>
     For quick evaluation and testing, you can use the following pre-configured credentials. These accounts are set up with sample data to help you explore all features immediately:
@@ -649,7 +649,7 @@ OrderEase/
       </tr>
     </tbody>
   </table>
-
+<hr/>
   <h3>🆕 Create Your Own Hotel</h3>
   <p>
     Alternatively, you can register your own hotel and create custom credentials to experience the complete setup process:
@@ -688,7 +688,7 @@ OrderEase/
   </ul>
   <!-- Add your tablet screenshots here -->
   <p>📹 <a href="https://drive.google.com/drive/folders/1jrpkM3oB6VOcrzEHGKhlkVmvmRUeQTrT?usp=drive_link">Watch all Tablet View Snapshots here</a></p>
-
+<hr/>
   <h3>💡 Testing Tips</h3>
   <ul>
     <li><strong>Start with Admin:</strong> Login as Admin first to understand the complete setup and configuration options</li>
