@@ -542,7 +542,7 @@ OrderEase/
   </ol>
 <hr/>
   <!-- <h3>📲 Download & Install APK</h3> -->
-  <p>Contact Developer for APK file by <a href='team'>clicking here...</a></p>
+  <p>Contact Developer for APK file by <a href='#team'>clicking here...</a></p>
 
 <!-- <p>
   📥 <strong>Download APK:</strong>
