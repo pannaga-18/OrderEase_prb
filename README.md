@@ -541,20 +541,15 @@ OrderEase/
     </li>
   </ol>
 <hr/>
-  <h3>📲 Download & Install APK</h3>
+  <!-- <h3>📲 Download & Install APK</h3> -->
+  <p>Contact Developer for APK file by <a href='team'>clicking here...</a></p>
 
-<p>
-  After multiple rigorous attempts and build environment refinements, the deployed APK was successfully 
-  generated using an alternative compatible build configuration. We apologize for any inconvenience 
-  caused by the earlier deployment note attached in files Attachments_Details - Entry Point or Team_OrderEase (Pannaga R Bhat) – Submission Attachments Details. Please consider this as a revised statement from the team.
-</p>
-
-<p>
+<!-- <p>
   📥 <strong>Download APK:</strong>
   <a href="https://drive.google.com/uc?export=download&id=1fz4Ou3c89XS71DCyPrNb_FVrwrS-RYFb">
     OrderEase APK
   </a>
-</p>
+</p> -->
 
 
 
